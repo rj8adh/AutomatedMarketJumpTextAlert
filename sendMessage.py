@@ -5,20 +5,22 @@ import os
 
 load_dotenv()
 
-CARRIERS = {
+# print(EMAIL)
+# print(PASSWORD)
+
+def sendTextMessage(phone_number, carrier, message):
+
+    # Common Mobile Phone Carriers and Corresponding Emails
+    CARRIERS = {
     "sprint": "@messaging.sprintpcs.com",
     "tmobile": "@tmomail.net",
     "verizon": "@vtext.com",
     "att": "@mms.att.net"
-}
+    }
  
-EMAIL = os.getenv("EMAIL_ADDRESS")
-PASSWORD = os.getenv("AUTH_KEY")
+    EMAIL = os.getenv("EMAIL_ADDRESS")
+    PASSWORD = os.getenv("AUTH_KEY")
 
-# print(EMAIL)
-# print(PASSWORD)
-
-def send_message(phone_number, carrier, message):
     recipient = phone_number + CARRIERS[carrier]
     auth = (EMAIL, PASSWORD)
  
