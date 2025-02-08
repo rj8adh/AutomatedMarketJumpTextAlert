@@ -2,6 +2,8 @@ from dotenv import load_dotenv
 import smtplib
 import sys # In case we want delay later
 import os
+from email.mime.text import MIMEText
+
 
 load_dotenv()
 
@@ -31,7 +33,8 @@ def sendTextMessage(phone_number, carrier, message):
     server.login(auth[0], auth[1])
  
     # Actually sending the message
-    server.sendmail(auth[0], recipient, message)
+    server.sendmail(auth[0], recipient, MIMEText(message, 'plain', 'utf-8').as_string()) # MIMEtext is to make sure it's formatted correctly for email to sms
+
 
 # The following code is in case you want to test the function by itself:
 
