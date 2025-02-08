@@ -10,7 +10,7 @@ stockPortf = getStockPortfolio(True) # Set arg to True to load from stockData.js
 
 while True:
     # Looping through every stock
-    for i in range(len(stockPortf)):
+    for i in reversed(range(len(stockPortf))):
         stock = stockPortf[i]
         ticker = list(stock)[0]
 
@@ -19,10 +19,13 @@ while True:
 
         # Checking and sending message if the stock target was reached
         if (targetReached): 
+
             targetReachedMessage = f"You hit your stock target for {ticker.upper()}. You currently have: {moneyInStock} in this stock"
             print(targetReachedMessage)
             print(type(targetReachedMessage))
+
             sendTextMessage(phoneNum, carrier, targetReachedMessage)
+
             del stockPortf[i] # Deleting the item from the stock portfolio so it doesn't keep spam texting the user about the same stock
     
     time.sleep(360) # Making the script run once every 6 mins to accomodate stmplib restrictions

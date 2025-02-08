@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 import smtplib
-import sys # In case we want delay later
 import os
 from email.mime.text import MIMEText
 

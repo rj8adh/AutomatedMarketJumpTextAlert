@@ -20,7 +20,7 @@ def evalStockPerformance(stockData: dict):
     targetType = stockData[stockTicker][0]
 
     # Typecasted to float to handle case where stockData only has strings
-    currentMoney = currentStockPrice * float(stockData[stockTicker][1])
+    currentMoney = round(currentStockPrice * float(stockData[stockTicker][1]), 2)
     targetPrice = float(stockData[stockTicker][2])
 
     # Checking what type of target the stock has been given and returning the appropriate values
