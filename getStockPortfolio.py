@@ -42,4 +42,6 @@ def getStockPortfolio(loadData: bool = False):
 
     return stockAndData
 
-print(getStockPortfolio(True))
+# The following code is in case you want to test the function by itself:
+
+# print(getStockPortfolio())

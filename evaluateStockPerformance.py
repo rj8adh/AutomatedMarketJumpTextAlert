@@ -39,4 +39,5 @@ def evalStockPerformance(stockData: dict):
         return
 
 # The following code is in case you want to test the function yourself:
+
 # print(evalStockPerformance({"aapl": ["T", 24.3, 4000]}))

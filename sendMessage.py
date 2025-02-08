@@ -17,7 +17,7 @@ def sendTextMessage(phone_number, carrier, message):
     "verizon": "@vtext.com",
     "att": "@mms.att.net"
     }
- 
+
     EMAIL = os.getenv("EMAIL_ADDRESS")
     PASSWORD = os.getenv("AUTH_KEY")
 
@@ -39,4 +39,4 @@ def sendTextMessage(phone_number, carrier, message):
 # carrier = input("Enter Mobile Provider: ")
 # message = input("Send Message: ")
 
-# send_message(phoneNum, carrier, message)
+# sendTextMessage(phoneNum, carrier, message)
