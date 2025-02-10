@@ -3,7 +3,6 @@ import smtplib
 import os
 from email.mime.text import MIMEText
 
-
 load_dotenv()
 
 # print(EMAIL)

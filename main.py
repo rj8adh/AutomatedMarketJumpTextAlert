@@ -6,7 +6,7 @@ import time
 phoneNum = input("\nEnter the phone number you want alerts to for the duration this script is running: ")
 carrier = input("\nEnter the mobile carrier of the phone number you gave: ")
 
-stockPortf = getStockPortfolio(True) # Set arg to True to load from stockData.json
+stockPortf = getStockPortfolio(False) # Set arg to True to load from stockData.json
 
 while True:
     # Looping through every stock
@@ -27,5 +27,5 @@ while True:
             sendTextMessage(phoneNum, carrier, targetReachedMessage)
 
             del stockPortf[i] # Deleting the item from the stock portfolio so it doesn't keep spam texting the user about the same stock
-    
-    time.sleep(360) # Making the script run once every 6 mins to accomodate stmplib restrictions
+            
+            time.sleep(300) # Making the script run once every 5 mins to accomodate stmplib restrictions
